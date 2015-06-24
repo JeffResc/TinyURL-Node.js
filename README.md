@@ -1,6 +1,8 @@
 # TinyURL
 [http://TinyURL.com](http://tinyurl.com) URL Shortener Node.js Module
 
+[![Coverage Status](https://coveralls.io/repos/AlphaT3ch/TinyURL/badge.svg)](https://coveralls.io/r/AlphaT3ch/TinyURL)
+
 Example Shorten:
 
 First run ```npm install TinyURL``` to install the TinyURL package to your system.
