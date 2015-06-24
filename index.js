@@ -6,4 +6,4 @@ module.exports = {
 			cb(body.split("\n")[0]);
         });
     }
-}
+};

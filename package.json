@@ -1,6 +1,6 @@
 {
   "name": "tinyurl",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "http://TinyURL.com URL Shortener Node.js Module",
   "main": "index.js",
   "dependencies": {
@@ -9,12 +9,10 @@
   "devDependencies": {
     "coveralls": "^2.11.2",
     "gulp": "^3.8.11",
-    "gulp-foreach": "^0.1.0",
-    "gulp-istanbul": "^0.8.1",
-    "gulp-jsdoc": "^0.1.4",
     "gulp-jshint": "^1.10.0",
-    "gulp-mocha": "^2.0.1",
-	"amdefine": "^0.1.1"
+    "gulp-concat": "^2.6.0",
+    "gulp-strip-debug": "^1.0.2",
+    "gulp-uglify": "^1.2.0"
   },
   "scripts": {
     "main": "node index.js",
@@ -22,18 +20,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/AlphaT3ch/TinyURL"
+    "url": "git+https://github.com/AlphaT3ch/TinyURL.git"
   },
   "keywords": [
     "TinyURL",
-	"url",
-	"short",
-	"shortener"
+    "url",
+    "short",
+    "shortener"
   ],
   "author": "AlphaTech",
   "bugs": {
     "url": "https://github.com/AlphaT3ch/TinyURL/issues"
   },
   "homepage": "https://github.com/AlphaT3ch/TinyURL",
-  "readmeFile": "README.md"
+  "readmeFile": "README.md",
+  "license": "ISC"
 }

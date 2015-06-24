@@ -1,71 +1,16 @@
-#! /usr/bin/env node
+var gulp = require('gulp'); 
+var jshint = require('gulp-jshint');
+var concat = require('gulp-concat');
+var stripDebug = require('gulp-strip-debug');
+var uglify = require('gulp-uglify');
 
-(function () {
-    'use strict';
-
-    var define = require('amdefine')(module);
-
-    var deps = [
-        'gulp',
-        'gulp-jsdoc',
-        'gulp-jshint',
-        'gulp-mocha',
-        'gulp-istanbul',
-        'gulp-foreach',
-    ];
-
-    define(deps, function(config, gulp, jsdoc, jshint, mocha, istanbul, foreach) {
-        var src = [
-            'lib/*.js'
-        ];
-
-        gulp.task('lint', [], function () {
-            return gulp.src(src)
-                .pipe(jshint())
-                .pipe(jshint.reporter('default'));
-        });
-
-        gulp.task('jsdoc', [], function () {
-            return gulp.src(src)
-                .pipe(jsdoc.parser())
-                .pipe(jsdoc.generator('data/doc/'));
-        });
-
-        gulp.task('mocha', [], function (cb) {
-            var ciMode = (process.env.CI === 'true');
-            process.env.BUILD_ENVIRONMENT = 'test';
-            gulp.src(['./*.js', './lib/**/*.js', './test/mocks/**/*.js'])
-                .pipe(istanbul({
-                  includeUntested: true,
-                  reporters: [ 'lcov' ],
-                }))
-                .pipe(istanbul.hookRequire())
-                .on('finish', function () {
-                return gulp.src('tests/unit/**/*.js', { read: false })
-                    .pipe(mocha({
-                      reporter: ((!ciMode && config.test_reporter) || 'spec'),
-                    }))
-                    .pipe(istanbul.writeReports())
-                    .on('end', cb);
-                });
-        });
-
-        // Build Task
-        gulp.task('build', [
-            'lint',
-            'jsdoc',
-            'test'
-        ]);
-
-        // Build Task
-        gulp.task('test', [
-            'mocha'
-        ]);
-
-        // Default Task
-        gulp.task('default', [
-            'build'
-        ]);
-
-    });
-}());
+gulp.task('default', function() {
+  gulp.src('./index.js')
+    .pipe(jshint())
+    .pipe(jshint.reporter('default'));
+  gulp.src(['./index.js'])
+    .pipe(concat('index.js'))
+    .pipe(stripDebug())
+    .pipe(uglify())
+    .pipe(gulp.dest('./build/'));
+});
