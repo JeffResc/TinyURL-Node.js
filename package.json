@@ -1,6 +1,6 @@
 {
   "name": "tinyurl",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "http://TinyURL.com URL Shortener Node.js Module",
   "main": "index.js",
   "dependencies": {
