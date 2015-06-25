@@ -17,3 +17,5 @@ TinyURL.shorten('http://google.com', function(res) {
 	console.log(res); //Returns a shorter version of http://google.com - http://tinyurl.com/2tx
 });
 ```
+
+[This Package Is Under The GPL-3.0 License](https://raw.githubusercontent.com/AlphaT3ch/TinyURL/master/LICENSE.txt)

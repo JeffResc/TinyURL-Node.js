@@ -1,6 +1,6 @@
 {
   "name": "tinyurl",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "http://TinyURL.com URL Shortener Node.js Module",
   "main": "index.js",
   "dependencies": {
@@ -34,5 +34,5 @@
   },
   "homepage": "https://github.com/AlphaT3ch/TinyURL",
   "readmeFile": "README.md",
-  "license": "ISC"
+  "license": "GPL-3.0"
 }
