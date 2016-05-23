@@ -1,4 +1,4 @@
-[![NPM](https://nodei.co/npm/tinyurl?downloads=true&downloadRank=true&stars=true)](https://npmjs.com/package/tinyurl/)
+[![NPM](https://nodei.co/npm/tinyurl.png?downloads=true&stars=true)](https://npmjs.com/package/tinyurl/)
 
 # TinyURL
 [http://TinyURL.com](http://tinyurl.com) URL Shortener Node.js Module
