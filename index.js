@@ -1,4 +1,4 @@
-var request = require('request');
+
 
 module.exports = {
     shorten: function(url, cb) {
