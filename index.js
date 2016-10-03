@@ -1,4 +1,4 @@
-
+var needle = require('needle')
 
 module.exports = {
     shorten: function(url, cb) {
