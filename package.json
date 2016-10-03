@@ -6,6 +6,15 @@
   "dependencies": {
     "request": "^2.58.0"
   },
+  "devDependencies": {
+    "gulp": "3.8.11",
+    "gulp-jshint": "1.10.0",
+    "gulp-markdown": "1.0.0"
+  },
+  "scripts": {
+    "main": "node index.js",
+    "test": "gulp"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/AlphaT3ch/TinyURL.git"
