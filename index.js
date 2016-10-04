@@ -1,9 +1,13 @@
-var request = require('request');
+var http = require("http")
 
 module.exports = {
     shorten: function(url, cb) {
-        request('http://tinyurl.com/api-create.php?url=' + encodeURIComponent(url), function (error, response, body) {
-			cb(body.split("\n")[0]);
-        });
+    	http.get('http://tinyurl.com/api-create.php?url=' + encodeURIComponent(url), res => {
+    		res.on('data', chunk => {
+    			cb(chunk.toString())
+    		})
+    	}).on("error", () => {
+    		cb("")
+    	})
     }
 };
