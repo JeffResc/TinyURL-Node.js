@@ -4,7 +4,6 @@
   "description": "http://TinyURL.com URL Shortener Node.js Module",
   "main": "index.js",
   "dependencies": {
-    "needle": "^1.1.2"
   },
   "repository": {
     "type": "git",
