@@ -10,10 +10,18 @@ First run ```npm install TinyURL``` to install the TinyURL package to your syste
 ```javascript
 var TinyURL = require('tinyurl');
 
-TinyURL.shorten('http://google.com', function(res) {
+TinyURL.shorten('http://google.com', function(res, err) {
+    if (err)
+        console.log(err)
 	console.log(res); //Returns a shorter version of http://google.com - http://tinyurl.com/2tx
 });
+
+//Promise Example
+TinyURL.shorten('http://google.com').then(function(res) {
+    console.log(res)
+}, function(err) {
+    console.log(err)
+})
 ```
 
-Returns an empty string if an error occurs.
 [This Package Is Under The GPL-3.0 License](https://raw.githubusercontent.com/AlphaT3ch/TinyURL/master/LICENSE.txt)
