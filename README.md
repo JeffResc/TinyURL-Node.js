@@ -24,6 +24,4 @@ TinyURL.shorten('http://google.com').then(function(res) {
 })
 ```
 
-Returns an empty string if an error occurs.
-
 [This Package Is Under The MIT License](https://raw.githubusercontent.com/AlphaT3ch/TinyURL/master/LICENSE.txt)
