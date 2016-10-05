@@ -1,6 +1,6 @@
 [![NPM](https://nodei.co/npm/tinyurl.png?downloads=true&stars=true)](https://npmjs.com/package/tinyurl/)
 
-# TinyURL
+# TinyURL [![Build Status](https://travis-ci.org/AlphaT3ch/TinyURL.svg?branch=master)](https://travis-ci.org/AlphaT3ch/TinyURL)
 [http://TinyURL.com](http://tinyurl.com) URL Shortener Node.js Module
 
 Example Shorten:
@@ -16,4 +16,5 @@ TinyURL.shorten('http://google.com', function(res) {
 ```
 
 Returns an empty string if an error occurs.
-[This Package Is Under The GPL-3.0 License](https://raw.githubusercontent.com/AlphaT3ch/TinyURL/master/LICENSE.txt)
+
+[This Package Is Under The MIT License](https://raw.githubusercontent.com/AlphaT3ch/TinyURL/master/LICENSE.txt)
