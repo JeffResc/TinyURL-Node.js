@@ -1,6 +1,6 @@
 [![NPM](https://nodei.co/npm/tinyurl.png?downloads=true&stars=true)](https://npmjs.com/package/tinyurl/)
 
-# TinyURL [![Build Status](https://travis-ci.org/AlphaT3ch/TinyURL.svg?branch=master)](https://travis-ci.org/AlphaT3ch/TinyURL)
+# TinyURL [![Build Status](https://travis-ci.org/JeffResc/TinyURL.svg?branch=master)](https://travis-ci.org/JeffResc/TinyURL)
 [http://TinyURL.com](http://tinyurl.com) URL Shortener Node.js Module
 
 Example Shorten:
