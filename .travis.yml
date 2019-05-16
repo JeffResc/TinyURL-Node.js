@@ -2,8 +2,4 @@ os:
   - "linux"
 language: node_js
 node_js:
-  - "6"
-  - "6.1"
-  - "5.11"
   - "iojs"
-  - "node"
