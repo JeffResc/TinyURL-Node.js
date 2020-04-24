@@ -1,47 +1,47 @@
-var http = require("http")
+import fetch from 'node-fetch'
 
 module.exports = {
-	shorten: function(url, cb) {
+	shorten: function (url, cb) {
 		if (typeof cb === "function") {
-			http.get('http://tinyurl.com/api-create.php?url=' + encodeURIComponent(url), res => {
-				res.on('data', chunk => {
+			fetch('http://tinyurl.com/api-create.php?url=' + encodeURIComponent(url))
+				.then(chunk => {
 					cb(chunk.toString())
 				})
-			}).on("error", err => {
-				cb(null, err)
-			})
+				.catch(err => {
+					cb(null, err)
+				})
 		} else {
 			return new Promise((resolve, reject) => {
-				http.get('http://tinyurl.com/api-create.php?url=' + encodeURIComponent(url), res => {
-					res.on('data', chunk => {
+				fetch('http://tinyurl.com/api-create.php?url=' + encodeURIComponent(url))
+					.then(chunk => {
 						resolve(chunk.toString())
 					})
-				}).on("error", err => {
-					reject(err)
-				})
+					.catch(err => {
+						reject(err)
+					})
 			})
 		}
 	},
-	resolve: function(url, cb) {
+	resolve: function (url, cb) {
 		if (typeof cb === "function")
-		  http
-			.get(url, res => {
-			  if (res.headers.location) cb(res.headers.location);
-			  else cb(null, new Error("Tiny URL not found!"));
-			})
-			.on("error", err => {
-			  cb(null, err);
-			});
+			fetch(url)
+				.then(res => {
+					if (res.headers.location) cb(res.headers.location)
+					else cb(null, new Error("Tiny URL not found!"))
+				})
+				.catch(err => {
+					cb(null, err)
+				})
 		else
-		  return new Promise((resolve, reject) => {
-			http
-			  .get(url, res => {
-				if (res.headers.location) resolve(res.headers.location);
-				else reject(new Error("Tiny URL not found!"));
-			  })
-			  .on("error", err => {
-				reject(err);
-			  });
-		  });
-	  }
+			return new Promise((resolve, reject) => {
+				fetch(url)
+					.then(res => {
+						if (res.headers.location) resolve(res.headers.location);
+						else reject(new Error("Tiny URL not found!"));
+					})
+					.catch(err => {
+						reject(err)
+					})
+			});
+	}
 };
