@@ -24,7 +24,7 @@ TinyURL.shorten('http://google.com').then(function(res) {
 })
 
 // Resolve Example
-TinyURL.resolve("http://tinyurl.com/2tx").then(
+TinyURL.resolve("https://tinyurl.com/2tx").then(
   function(res) {
     console.log(res); //Returns http://google.com, the full URL located at http://tinyurl.com/2tx
   },
@@ -34,4 +34,4 @@ TinyURL.resolve("http://tinyurl.com/2tx").then(
 );
 ```
 
-[This Package Is Under The MIT License](https://raw.githubusercontent.com/AlphaT3ch/TinyURL/master/LICENSE.txt)
+[This Package Is Licensed Under The MIT License](https://github.com/JeffResc/TinyURL-Node.js/blob/master/LICENSE.txt)
