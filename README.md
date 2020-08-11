@@ -11,13 +11,31 @@ First run ```npm install TinyURL``` to install the TinyURL package to your syste
 var TinyURL = require('tinyurl');
 
 TinyURL.shorten('http://google.com', function(res, err) {
-    if (err)
-        console.log(err)
+  if (err)
+    console.log(err)
+	console.log(res);
+});
+
+// Shorten with Alias Example
+const data = { 'url': 'https://google.com', 'alias': 'custom-alias-for-google' }
+
+TinyURL.shortenWithAlias(data, function(res, err) {
+  if (err)
+    console.log(err)
 	console.log(res); //Returns a shorter version of http://google.com - http://tinyurl.com/2tx
 });
 
-//Promise Example
+// Promise Example
 TinyURL.shorten('http://google.com').then(function(res) {
+    console.log(res)
+}, function(err) {
+    console.log(err)
+})
+
+// Shorten with Alias Promise Example
+const data = { 'url': 'https://google.com', 'alias': 'custom-alias-for-google' }
+
+TinyURL.shortenWithAlias(data).then(function(res) {
     console.log(res)
 }, function(err) {
     console.log(err)

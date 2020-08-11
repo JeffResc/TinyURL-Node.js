@@ -23,6 +23,29 @@ module.exports = {
       })
     }
   },
+  shortenWithAlias: function(data, cb) {
+    const url = 'https://tinyurl.com/api-create.php?url=' + encodeURIComponent(data.url) + '&alias=' + encodeURIComponent(data.alias);
+
+    if (typeof cb === "function") {
+      https.get(url, res => {
+        res.on('data', chunk => {
+          cb(chunk.toString())
+        })
+      }).on("error", err => {
+        cb(null, err)
+      })
+    } else {
+      return new Promise((resolve, reject) => {
+        https.get(url, res => {
+          res.on('data', chunk => {
+            resolve(chunk.toString())
+          })
+        }).on("error", err => {
+          reject(err)
+        })
+      })
+    }
+  },
   resolve: function(url, cb) {
     if (typeof cb === "function") {
 			if (url.split(':')[0] == 'http') {
