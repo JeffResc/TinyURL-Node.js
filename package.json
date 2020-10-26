@@ -6,7 +6,7 @@
   "dependencies": {},
   "devDependencies": {
     "gulp": "3.8.11",
-    "gulp-jshint": "1.10.0",
+    "gulp-jshint": "2.1.0",
     "gulp-markdown": "1.0.0"
   },
   "scripts": {
