@@ -5,7 +5,7 @@
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {
-    "gulp": "3.8.11",
+    "gulp": "4.0.2",
     "gulp-jshint": "1.10.0",
     "gulp-markdown": "1.0.0"
   },
